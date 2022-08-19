@@ -10,7 +10,4 @@ while index < size:
     sum = sum+numbers[index]
     index = index + 1
 avg = sum/size
-print(avg)
-@
-@
-    
+print(avg) 
