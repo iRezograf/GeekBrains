@@ -20,4 +20,4 @@ https://www.youtube.com/watch?v=g1k48cVIynw&t=61s
 4. git commit -m "Убрал расширение md у файла Essay-Summary"
 5. можно создать локальный клон git clone https://github.com/iRezograf/GeekBrains он создасться в том же каталоге
 
-19ю08 Илья Кротов
+19.08 Илья Кротов
