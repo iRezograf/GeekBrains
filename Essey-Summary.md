@@ -13,10 +13,11 @@ https://www.youtube.com/watch?v=g1k48cVIynw&t=61s
  $ man git-<команда>
 ```
 
-
 1. проверка что гит установлен git --versionrafaelrezyapov@MacBook-Air-Rafael GeekBrains % git --version
    git version 2.32.1 (Apple Git-133)
 2. git add Essey-Summary
 3. git diff
 4. git commit -m "Убрал расширение md у файла Essay-Summary"
 5. можно создать локальный клон git clone https://github.com/iRezograf/GeekBrains он создасться в том же каталоге
+
+19ю08 Илья Кротов
