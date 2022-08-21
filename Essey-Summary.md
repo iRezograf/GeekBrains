@@ -36,7 +36,9 @@ git   version 2.32.1 (Apple Git-133)
 - сделать ее актуальной  
    `git checkout NewBranch`
 8. коммитим
-   `git commit -m "New branch for new lesson"`
+   `git commit -m "New branch for new lesson"`  
+8. можно даже переименовать последний коммит  
+   `git commit --amend -m "Новое имя для последнего коммита"`
 9. можно создать локальный клон  
 `git clone https://github.com/iRezograf/GeekBrains`  
 он создасться в том же каталоге
