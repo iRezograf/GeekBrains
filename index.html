@@ -1,17 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>GB Study</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>GB Study</title>
+    </head>
 
-<body>
-    <h1></h1>
-    <!--- Путь в href должен начинаться с точки: ./path--->
-    <a href="1. Program Introduction/S3/pi.html">1. Program Introduction</a><br>
-    <a href="2. Version Control/vc.html">2. Version Control</a> <br>
-    <a href="A. HTML_CSS interactive course/html_css.html">A. HTML_CSS. Interactive Course</a>
+    <body>
+        <h1></h1>
+        <!--- Путь в href должен начинаться с точки: ./path--->
+        <ul class="menu">
+            <li>
+                <a href="1. Program Introduction/S3/pi.html">Введение в программирование</a><br>
+                <ul>
+                    <li>
+                        <a href="https://gb.ru/lessons/255784" target="_blank">Урок 1. Введение в программирование. Урок 1</a>
+                        <br>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="2. Version Control/vc.html">Контроль версий</a>
+                <br>
+                <ul>
+                    <li>
+                        <a href="https://gb.ru/lessons/256997" target="_blank">Урок 2. Установка и настройка системы контроля версий</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="A. HTML_CSS interactive course/html_css.html">HTML и CSS Введение</a>
+                <ul>
+                    <li>
+                        <a href="https://gb.ru/study_groups/4348/videos/19622" target="_blank">Основные понятия в веб-разработке</a><br>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <!-- <a href="1. Program Introduction/S3/pi.html">1. Program
+        Introduction</a><br> <a href="2. Version Control/vc.html">2. Version Control</a>
+        <br> <a href="A. HTML_CSS interactive course/html_css.html">A. HTML_CSS.
+        Interactive Course</a> -->
 
+        <h1>
+            регистрация
 
-</html>
+        </h1>
+        <form action="" class="" form_registration="form_registration">
+            Введите ваше имя
+            <input type="text" placeholder="ваше имя" name="" id="1"><br>
+            Введите пароль
+            <input type="password" placeholder="password" name="" id="2"><br>
+
+            Пол
+            <br>
+            M
+            <input type="radio" name="pol" checked="checked">
+            <br>
+            W
+            <input type="radio" name="pol">
+            <br>
+
+            Интересы<br>
+            Карты
+            <input type="checkbox"><br>
+            Деньги
+            <input type="checkbox"><br>
+            Рок-н-Ролл
+            <input type="checkbox"><br>
+            <br>
+            <input type="submit" value="Подтвердить">
+            <br>
+            <input type="reset" value="Сбросить">
+        </form>
+        
+    </html>
