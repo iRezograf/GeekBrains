@@ -1,3 +1,20 @@
 {
-    "markdown.experimental.editor.pasteLinks.enabled": false
+    "markdown.experimental.editor.pasteLinks.enabled": false,
+    "cSpell.words": [
+        "блок",
+        "Введение",
+        "версий",
+        "Ильнар",
+        "Использованные",
+        "контроль",
+        "лекции",
+        "Лекция",
+        "материалы",
+        "После",
+        "последний",
+        "реферат",
+        "схеме",
+        "Урок",
+        "Шафигуллин"
+    ]
 }
