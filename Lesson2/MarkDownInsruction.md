@@ -14,7 +14,7 @@
  `git commit -m "created file MarkDown ..."` 
 * Переходим в другую ветку  
   `git checkout vetaka1`
-* 
+* там этот файл отсутствует 
 * 
 ## Работа с изображениями
 ## Ссылки
