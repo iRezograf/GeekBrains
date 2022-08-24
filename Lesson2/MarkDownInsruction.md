@@ -13,9 +13,11 @@
  `git add .`  
  `git commit -m "created file MarkDown ..."` 
 * Переходим в другую ветку  
-  `git checkout vetaka1`
+  `git checkout vetka1`
 * там этот файл отсутствует 
-* 
+* a теперь он здесь появится:  
+  `git merge vetka2`
+  
 ## Работа с изображениями
 ## Ссылки
 ## Работа с таблицами
