@@ -37,3 +37,7 @@
 ![](Screenshot%202022-08-24%20at%2015.42.14.png)
 ![](Screenshot%202022-08-24%20at%2015.47.25.png)
 
+# Удаление веток
+  *ветки удалю после проверки ДЗ*  
+  `git branch -d vetka1`  
+  `git branch -d vetka1`
