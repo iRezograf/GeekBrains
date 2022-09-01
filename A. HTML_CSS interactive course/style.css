@@ -1,0 +1,17 @@
+.container 
+{
+    width: 1200px;
+    min-width: 600;
+    margin: auto;
+}
+.header
+{
+    height: 200px;
+    background-color: aquamarine;
+}
+.nav
+{
+    height: 200px;
+    width: 200px;
+    background-color: aqua;   
+}

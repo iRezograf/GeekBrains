@@ -23,7 +23,8 @@ git push --set-upstream origin master
 
 
 1. проверяем установлен ли гит:  
-`git --version` . 
+`git --version` или
+`git status`
 git   version 2.32.1 (Apple Git-133)
 2. смотрим настройки:  
 `git config -l`  
