@@ -7,3 +7,14 @@ Console.WriteLine("Hello, World!");
 -3 -> нет
 7 -> нет
 */
+Console.Write("Введите число, a ");
+int a = int.Parse(Console.ReadLine());
+
+if (a % 2 == 0)
+{
+    Console.Write($"a = {a} -> да");
+}
+else 
+{
+    Console.Write($"a = {a} -> нет");
+}
