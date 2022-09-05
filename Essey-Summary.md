@@ -141,3 +141,21 @@ https://github.com/killkuruzzza/git_lesson_3
    ```  
 7. Заходим на `https://github.com/iRezograf/git_lesson_3`
 8. Нажимаем кнопку "Pull Request@
+
+## Введене в языки программирования
+
+### C#
+1. Ввод -вывод
+```
+string s = Console.ReadLine();
+Console.WriteLine("input your string");
+```
+### Python
+
+1. Ввод -вывод
+``` 
+name = input("Your name: ")  
+age = input("Your age: ")
+print(f"Name: {name}  Age: {age}")
+```
+

@@ -9,3 +9,16 @@
 #10 99
 
 
+
+
+from decimal import Decimal
+from os import write
+import random
+
+x = random.randrange(10,99)
+xl = x//10
+xr = x%10
+if (x//10 > x%10):
+    print(f"{x} -> {xl}")
+else:
+    print(f"{x} -> {xr}")
