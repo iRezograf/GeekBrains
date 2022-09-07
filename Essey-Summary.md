@@ -28,6 +28,16 @@ git push --set-upstream origin master
 git   version 2.32.1 (Apple Git-133)
 2. смотрим настройки:  
 `git config -l`  
+2. возможно придется проинициализировать некоторые параметры:
+   ```
+   $ git config --global user.name "Rafael Rezyapov"
+   $ git config --global user.email Rezograf@gmail.com  
+   
+   git config -l  
+   ...  
+   user.email=rezograf@gmail.com  
+   user.name=Rafael Rezyapov  
+   ...
 3. базовый набор сохранения изменений:
 - `git status`  
 - `git diff`
@@ -46,6 +56,36 @@ git   version 2.32.1 (Apple Git-133)
 9. можно создать локальный клон  
 `git clone https://github.com/iRezograf/GeekBrains`  
 он создасться в том же каталоге
+### _Урок 3. Углубляемся в контроль версий_
+
+##### _Цель: научиться работать с совместными проектами, с размещением репозитория на GitHube для обеспечения доступа коллег_
+
+>##### сделал commit - можешь себе позволить все,
+>##### сделал push - можешь позволить себе еще больше ...
+1. регистрация на GitHub.ru
+1. создание своего репозитория в GitHub
+   * создаем рабочий каталог
+      * `mkdir Lesson3`
+      * `mkfile Essey-Summary.md`
+   *  _памятка:_
+         > * ##### mkdir "dirname"  
+         > * ##### mkfile "filename"
+         > * ##### rm -d "dirname"
+         > * ##### rm "filename" 
+   * открываем его в VSCode 
+   * инициализируем git для этого каталога
+      * `git init`
+   * "привяываем свои "идентификаторы"
+      * `$ git config --global user.name "Rafael Rezyapov"`
+      * `$ git config --global user.email Rezograf@gmail.com` 
+   * готовим дальше
+   * `git status`
+      * `git add Essey-Summary.md` (или `git add .`)
+      * `git commit -m "Initialisation commit"` 
+2. твой первый пуш
+3. твой первый форк
+3. pull request
+
 
 ### MarkDown   
 [Basic Formatting Syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
@@ -150,6 +190,13 @@ https://github.com/killkuruzzza/git_lesson_3
 string s = Console.ReadLine();
 Console.WriteLine("input your string");
 ```
+
+Скомпилированную порграмму можно уже запустить в каталоге:
+```
+.\task19\bin\Debug\net6.0\ 
+open task19
+```
+
 ### Python
 
 1. Ввод -вывод

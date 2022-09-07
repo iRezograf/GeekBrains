@@ -21,4 +21,5 @@ else
 {
     Console.Write($"a = {a}, b = {b}, ->  нет");
 }
+
     
