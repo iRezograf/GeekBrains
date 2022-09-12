@@ -190,12 +190,22 @@ https://github.com/killkuruzzza/git_lesson_3
 string s = Console.ReadLine();
 Console.WriteLine("input your string");
 ```
+1. Форматированный вывод:
+```
+Console.WriteLine($"{lengthBetween(points):F2}");
+Console.WriteLine( "{0, 10:F2}",lengthBetween(points) );
+                     ^
+                     |
+                     * ----- порядковый номер параметра
+```
 
 Скомпилированную порграмму можно уже запустить в каталоге:
 ```
 .\task19\bin\Debug\net6.0\ 
 open task19
 ```
+
+
 
 ### Python
 
@@ -204,5 +214,31 @@ open task19
 name = input("Your name: ")  
 age = input("Your age: ")
 print(f"Name: {name}  Age: {age}")
+```
+
+### Java
+
+1. Ввод -вывод
+``` 
+public  class MainMenu {
+    public static void main(String[] args) {
+        System.out.println("Наконец-то!!!");
+        
+        Scanner in = new Scanner(System.in);
+        System.out.print("Input a number: ");
+        int num = in.nextInt();
+          
+        System.out.printf("Your number: %d \n", num);
+        in.close();        
+    }
+}
+```
+2. Скомпилировать
+```
+javac MainMenu.java
+```
+3. Запустить
+```
+java MainMenu
 ```
 
