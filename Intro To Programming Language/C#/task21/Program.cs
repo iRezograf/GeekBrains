@@ -30,9 +30,9 @@ InputPoint("введите координаты точки B формате (x,y
 Console.Write($"A ({points[0,0]},{points[0,1]},{points[0,2]}); ");
 Console.Write($"B ({points[1,0]},{points[1,1]},{points[1,2]}) -> ");
 //Console.WriteLine($"{lengthBetween(points):F2}");
-Console.WriteLine( "{0,0:F2}",lengthBetween(points) );
+Console.WriteLine( "{0,0:F2}",LengthBetween(points) );
 
-double lengthBetween(int[,] pnt)
+double LengthBetween(int[,] pnt)
 {
     double result = 0;
         for (int j = 0; j <  3; j++)

@@ -242,3 +242,7 @@ javac MainMenu.java
 java MainMenu
 ```
 
+### Регулярные выражения
+`
+https://docs.microsoft.com/ru-ru/dotnet/api/system.text.regularexpressions.regex?view=net-6.0
+`
