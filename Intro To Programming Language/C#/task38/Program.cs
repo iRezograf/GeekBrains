@@ -44,7 +44,7 @@ class Task36
 
         RandomFillArray(array);
         PrintArray(array);
-        LookUpMaxAndMin(array, out int max, out int min);
+        LookUpMaxAndMin (array, out int max, out int min);
         Console.WriteLine($" -> {max - min} ");
     }
 }
