@@ -8,7 +8,20 @@
 // заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
 // b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
+static int CalcPositive(int[] arr)
+{
+    int res = 0;
+    foreach (int e in arr)
+        res = e > 0 ? ++res : res;
+    return res;
+}
+
 MyClasses mc = new MyClasses();
-int [] arr = mc.CreateArray(4,-10,10);
-mc.PrintArray(arr);
+//int [] arr = mc.CreateArray(5,-10,10);
+int[] arr = mc.CreateArrFromKeyboard();
+if (arr.Length > 0)
+{
+    mc.PrintArray(arr);
+    Console.WriteLine($"-> {CalcPositive(arr)}");
+}
 
