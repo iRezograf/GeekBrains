@@ -1,4 +1,4 @@
-public class MyClasses
+public class Arrays
 {
     public double[] CreateArray(int count, int minVal, int maxVal)
     {

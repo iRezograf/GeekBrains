@@ -23,14 +23,14 @@ double [] Point(double [][] arr)
     return res;
 }
 
-MyClasses mc = new MyClasses();
+Arrays CArrays = new Arrays();
 double[][] array = new double[2][];
 string prompt;
 
 prompt = "введите параметры 1-й линии (y = k * x + b) в формате k, b: ";
-array[0] = mc.CreateArrFromKeyboard(prompt);
+array[0] = CArrays.CreateArrFromKeyboard(prompt);
 prompt = "введите параметры 2-й линии (y = k * x + b) в формате k, b: ";
-array[1] = mc.CreateArrFromKeyboard(prompt);
+array[1] = CArrays.CreateArrFromKeyboard(prompt);
 
 if (array[0][0] == array[1][0])
     Console.WriteLine("прямые не пересекаются ...");
