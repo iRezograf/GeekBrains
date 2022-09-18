@@ -16,12 +16,12 @@ static int CalcPositive(int[] arr)
     return res;
 }
 
-MyClasses mc = new MyClasses();
+Arrays arrays = new Arrays();
 //int [] arr = mc.CreateArray(5,-10,10);
-int[] arr = mc.CreateArrFromKeyboard();
+int[] arr = arrays.CreateArrFromKeyboard();
 if (arr.Length > 0)
 {
-    mc.PrintArray(arr);
+    arrays.PrintArray(arr);
     Console.WriteLine($"-> {CalcPositive(arr)}");
 }
 
