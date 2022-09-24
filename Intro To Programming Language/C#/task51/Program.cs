@@ -30,12 +30,12 @@ Console.WriteLine($"Сумма элементов главной диагона�
 void SumElementsOfDiagonal(int[,] array, out string arrayAsString, out int summaElements)
 {
     int[] diagonalArray = ElementsOfDiagonal(array);
-    summaElements = 0;
-    arrayAsString = "";
-    foreach (int e in diagonalArray)
+    summaElements = diagonalArray[0];
+    arrayAsString = diagonalArray[0].ToString();
+    for (int i = 1; i < diagonalArray.Length; i++)
     {
-        summaElements = summaElements + e;
-        arrayAsString = String.Join(" ", arrayAsString, e.ToString());
+        summaElements = summaElements + diagonalArray[i];
+        arrayAsString = String.Join(" + ", arrayAsString, diagonalArray[i].ToString());
     }
 
 }
