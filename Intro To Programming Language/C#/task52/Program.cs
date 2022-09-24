@@ -7,34 +7,18 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-double [] AverageByColumns(int [][] array)
-{
-    double [] result = new double [array[0].Length];
-    for (int j = 0; j < array[0].Length; j++)
-    {
-        double summa = 0;    
-        for (int i = 0; i < array.Length; i++)
-        {
-            summa = summa + array[i][j];
-        }
-        result[j] = summa/array.Length;
-    }
-    return result;
-}
 
 Arrays arrays = new Arrays();
-int row = 3;
+int row = 4;
 int column = 5; 
 int minVal = -10;
 int maxVal = 10;
-int [][] array;
-array = arrays.CreateTwoDimensionArray(row, column, minVal, maxVal);
-arrays.PrintTwoDimensionArray(array);
 
-double [] averageByColumns =  AverageByColumns(array);
 
+arrays.CreateArray(row, column, minVal, maxVal, out int [,] array);
+arrays.PrintArray(array);
+
+
+double [] averageByColumns =  arrays.AverageByColumns(array);
+Console.Write("// Среднее арифметическое каждого столбца: ");
 arrays.PrintArray(averageByColumns);
-
-// перегрузка методов
-// int [] a = {1,2};
-// arrays.PrintArray(a);
