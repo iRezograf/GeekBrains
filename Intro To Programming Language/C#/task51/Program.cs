@@ -13,51 +13,44 @@ int rows = int.Parse(Console.ReadLine());
 Console.Write("Введите количество столбцов массива: ");
 int columns = int.Parse(Console.ReadLine());
 
-int minValue = 0;
+int minValue = -10;
 int maxValue = 10;
 
-int[,] array = GetArray(rows, columns, minValue, maxValue);
-PrintArray(array);
+Arrays a = new Arrays();
+a.CreateArray(rows, columns, minValue, maxValue, out int[,] array);
+a.PrintArray(array);
 Console.WriteLine("");
-Console.WriteLine($"Сумма диагональных чисел = {SumElementsOfDiagonal(array)}");
+SumElementsOfDiagonal(array, out string arrayAsString, out int summaElements);
+Console.WriteLine($"Сумма элементов главной диагонали: {arrayAsString}  = {summaElements}");
 
-int[,] GetArray(int m, int n, int minValue, int maxValue)
+
+
+
+
+void SumElementsOfDiagonal(int[,] array, out string arrayAsString, out int summaElements)
 {
-    int[,] result = new int[m, n];
-    for (int i = 0; i < m; i++)
+    int[] diagonalArray = ElementsOfDiagonal(array);
+    summaElements = 0;
+    arrayAsString = "";
+    foreach (int e in diagonalArray)
     {
-        for (int j = 0; j < n; j++)
-        {
-            result[i, j] = new Random().Next(minValue, maxValue + 1);
-        }
+        summaElements = summaElements + e;
+        arrayAsString = String.Join(" ", arrayAsString, e.ToString());
     }
-    return result;
+
 }
 
-void PrintArray(int[,] inArray)
+int[] ElementsOfDiagonal(int[,] array)
 {
-    for (int i = 0; i < inArray.GetLength(0); i++)
-    {
-        for (int j = 0; j < inArray.GetLength(1) ; j++)
-        {
-            Console.Write($"{inArray[i,j]} ");
-        }
-        Console.WriteLine();
-    }
-    
-}
-
-int SumElementsOfDiagonal(int [,] array)
-{
-    int result = 0;
-    // считаем только для значений диагонали, игнорируя остальной массив
-    // каким бы большим он ни был
-    int lenDiagonal = (array.GetLength(0) < array.GetLength(1)? 
-                                            array.GetLength(0): 
-                                            array.GetLength(1));                                        
+    int lenDiagonal = (array.GetLength(0) < array.GetLength(1) ?
+                                            array.GetLength(0) :
+                                            array.GetLength(1));
+    // цикл сокращаем до размера дианонали
+    int[] result = new int[lenDiagonal];
     for (int i = 0; i < lenDiagonal; i++)
     {
-        result = result +array [i,i]; 
+        // в виде массива возвращаем только диагональ
+        result[i] = array[i, i];
     }
     return result;
 }
