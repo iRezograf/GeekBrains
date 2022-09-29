@@ -7,46 +7,55 @@
 
 Arrays arrays = new Arrays();
 
-Console.WriteLine(4534%10);
-
-
 int[] dimentions = arrays.CreateArrFromKeyboard("введите размер матрицы А в формате: i,j: ");
 int[,] array = new int[dimentions[0], dimentions[1]];
+int value = 1;
+//int CurCol = dimentions[1] - 1;
 
-for (int i = 0; i < dimentions[0]; i++)
-{
-    for (int j = 0; j < dimentions[1]; j++)
-    {
-        array[i, j] = i * dimentions[1] + j;
-        array[i, j] = 0;
-        //Console.WriteLine(array[i, j].ToString("00.00"));
-    }
-}
+// отрисовываю первую строку, как частный случай
+for (int i = 0; i < dimentions[1]; i++)
+    array[0, i] = value++;
 
-array[0,0] = 0;
-Right(array, 0, 0, dimentions[1]-1);
+// отрисовываю, начиная с правого верхнего угла, общий, рекурсивный случай
+value = DrawRect(array, 0, dimentions[1] - 1, dimentions[0], dimentions[1], --value);
+
 arrays.PrintArray(array);
 
 
-void Right(int [,] array, int positionRow, int positionColumn, int countHope)
+int DrawRect(int[,] array, int curRow, int CurCol, int n, int m, int value)
 {
-    for (int i = 1; i <= countHope; i++)
-    {
-        array[positionRow,positionColumn+i] = array[positionRow,positionColumn]+1;
-        Console.Write(array[positionRow,positionColumn+i]+ "");
-        //positionRow++;
-        //positionColumn++;
-    }
-}
-/* void UpRight(int [,] array, int i, int j, int count)
-{
+    if (value >= array.GetLength(0) * array.GetLength(1)) return value;
+
+    int bufN = n;
+    while (n-- > 0)
+        array[curRow++, CurCol] = value++;
+    curRow--;
+    value--;
+
+    int bufM = m;
+    while (m-- > 0)
+        array[curRow, CurCol--] = value++;
+    CurCol++;
+    value--;
     
+    // эта проверка нужна только для случая массива из двух строк (2хM)
+    if (value >= array.GetLength(0) * array.GetLength(1)) return value;
+
+    n = bufN - 1;
+    while (n-- > 0)
+        array[curRow--, CurCol] = value++;
+    curRow++;
+    value--;
+
+    m = bufM - 1;
+    while (m-- > 0)
+        array[curRow, CurCol++] = value++;
+    CurCol--;
+    value--;
+
+    n = bufN - 1;
+    m = bufM - 1;
+    return DrawRect(array, curRow, CurCol, n - 1, m - 1, value);
 }
 
-void DownLeft(int [,] array, int positionRow, int positionColumn, int countHope, int value)
-{
-    for (int i = 1; i <= countHope; i++)
-    {
-        array[positionRow,positionColumn+i] = array[positionRow,positionColumn]+1;
-    }
-} */
+

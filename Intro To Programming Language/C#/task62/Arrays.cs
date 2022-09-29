@@ -84,7 +84,7 @@
             Console.Write("[");
             for (int j = 0; j < array.GetLength(1); j++)
             {
-                Console.Write($"{array[i, j],8:F0}, ");
+                Console.Write("{0,8}, ", array[i, j].ToString("D2"));
             }
             Console.Write("\b\b]\n");
         }
@@ -211,6 +211,7 @@
             array[i + 1] = key;
         }
     }
+
     public void MatrixMultiplicate(int[,] aMatrix, int[,] bMatrix, out int[,] product)
     // https://learn.microsoft.com/ru-ru/cpp/parallel/amp/walkthrough-matrix-multiplication?
     // view=msvc-160&viewFallbackFrom=vs-2019
@@ -218,16 +219,25 @@
     // https://ru.onlinemschool.com/math/assistance/matrix/multiply/?
     // oms_all=a%3d%7b%7b4,5%7d,%7b2,2%7d,%7b4,5%7d%7d,b%3d%7b%7b3,4,5,2%7d,%7b4,2,3,3%7d%7d
     {
-        product = new int[aMatrix.GetLength(0),bMatrix.GetLength(1)];
+        product = new int[aMatrix.GetLength(0), bMatrix.GetLength(1)];
         for (int row = 0; row < aMatrix.GetLength(0); row++)
         {
             for (int col = 0; col < bMatrix.GetLength(1); col++)
             {
                 for (int inner = 0; inner < bMatrix.GetLength(0); inner++)
                 {
-                    product[row,col] += aMatrix[row,inner] * bMatrix[inner,col];
+                    product[row, col] += aMatrix[row, inner] * bMatrix[inner, col];
                 }
             }
         }
+    }
+    public int[] CreateArrayUniqValue(int count, int minVal, int maxVal)
+    {
+        Random ran = new Random();
+        int[] array = new int[count];
+        int interval = (maxVal + 1 - minVal) / count;
+        for (int i = 0; i < count; i++)
+            array[i] = ran.Next(minVal, minVal += interval);
+        return array;
     }
 }
