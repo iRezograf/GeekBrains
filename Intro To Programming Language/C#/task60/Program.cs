@@ -11,7 +11,7 @@
 Arrays arrays = new Arrays();
 int len = 2;
 //int [] lineArray = new int [len*len*len];
-int [] lineArray = arrays.CreateArrayUniqValue(8, 10, 99);
+int [] lineArray = arrays.CreateArrayUniqValue(2, 10, 99);
 
 int [,,] array = new int [len,len,len];
 
