@@ -206,6 +206,19 @@ open task19
 ```
 
 
+### Знакомство с базами данных
+
+Языки баз данных
+В СУБД поддерживается несколько специализированных по своим
+функциям подъязыков. Их можно разбить на две категории:
+* язык определения данных БД DDL — Data Definition Language;
+* язык манипулирования данными DML — Data Manipulation Language). 
+
+[Справочник по Transact-SQL (T-SQL)](https://learn.microsoft.com/ru-ru/sql/t-sql/queries/queries?source=recommendations&view=sql-server-ver16)
+
+Компактные и бесплатные БД  
+[MySQL](https://www.mysql.com/)  
+[PostgreSQL](https://www.postgresql.org/download/macosx/)
 
 ### Python
 
