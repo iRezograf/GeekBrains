@@ -204,8 +204,7 @@ Console.WriteLine( "{0, 10:F2}",lengthBetween(points) );
 .\task19\bin\Debug\net6.0\ 
 open task19
 ```
-
-
+[Программирование. Дмитрий Криницын рекомендует](%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.%20%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9%20%D0%9A%D1%80%D0%B8%D0%BD%D0%B8%D1%86%D1%8B%D0%BD%20%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D1%83%D0%B5%D1%82.docx)
 ### Знакомство с базами данных
 
 Языки баз данных
@@ -219,6 +218,20 @@ open task19
 Компактные и бесплатные БД  
 [MySQL](https://www.mysql.com/)  
 [PostgreSQL](https://www.postgresql.org/download/macosx/)
+
+[Краткое описание JOIN](https://sql-academy.org/ru/guide/multi-table-request-join)
+
+
+```
+SELECT *
+FROM foo f1
+LEFT JOIN (bar b1
+  INNER JOIN baz b2 ON b2.id = b1.baz_id
+) ON
+  b1.id = f1.bar_id
+```
+
+[Тестирование. Дмитрий Криницын рекомендует](%D0%A2%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.%20%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9%20%D0%9A%D1%80%D0%B8%D0%BD%D0%B8%D1%86%D1%8B%D0%BD%20%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D1%83%D0%B5%D1%82.docx)
 
 ### Python
 
@@ -261,3 +274,14 @@ java MainMenu
 `
 https://docs.microsoft.com/ru-ru/dotnet/api/system.text.regularexpressions.regex?view=net-6.0
 `
+
+### Выбор специализации
+[Программирование. Дмитрий Криницын рекомендует](./Specialisation/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.%20%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9%20%D0%9A%D1%80%D0%B8%D0%BD%D0%B8%D1%86%D1%8B%D0%BD%20%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D1%83%D0%B5%D1%82.docx)
+
+[Тестирование. Дмитрий Криницын рекомендует](./Specialisation/%D0%A2%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.%20%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9%20%D0%9A%D1%80%D0%B8%D0%BD%D0%B8%D1%86%D1%8B%D0%BD%20%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D1%83%D0%B5%D1%82.docx)
+
+[Аналитик. Андрей Вельгушев рекомендует](./Specialisation/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D0%BA.%20%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9%20%D0%92%D0%B5%D0%BB%D1%8C%D0%B3%D1%83%D1%88%D0%B5%D0%B2%20%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D1%83%D0%B5%D1%82.docx)
+
+[ПрожектМенеджер. Роман Рыбкин рекомендует](./Specialisation/%D0%9F%D1%80%D0%BE%D0%B6%D0%B5%D0%BA%D1%82%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80.%20%D0%A0%D0%BE%D0%BC%D0%B0%D0%BD%20%D0%A0%D1%8B%D0%B1%D0%BA%D0%B8%D0%BD%20%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D1%83%D0%B5%D1%82.docx)
+
+[ПрожектМенеджер. Роман Рыбкин рекомендует](./Specialisation/%D0%9F%D1%80%D0%BE%D0%B6%D0%B5%D0%BA%D1%82%D0%9C%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80.%20%D0%A0%D0%BE%D0%BC%D0%B0%D0%BD%20%D0%A0%D1%8B%D0%B1%D0%BA%D0%B8%D0%BD%20%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D1%83%D0%B5%D1%82.docx)
