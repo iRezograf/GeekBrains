@@ -27,26 +27,28 @@ def block(n, nn):
     else:
         return str(nn) + '*x**'+str(n)
 
-
-k = randint(1, 3)
+k = 5   # Задана натуральная степень k.
+        # = randint(1, 5)  # степень
 data = []
 
 
-for k in range(3, -1, -1):
-    kk = randint(0, 12)
-    data.append(block(k, kk))
-    #print(f'kk = {kk}, k = {k}, -> {block(k, kk)}')
-    k -= 1
+for i in range(k, -1, -1):
+    kk = randint(0, 101)  # коэффициент
+    data.append(block(i, kk))
+    #print(f'kk = {kk}, k = {i}, -> {block(i, kk)}')
+ 
+
 for item in data:
-    print(item)
-d = "+".join(data)
-print(d)
-exit()
+    if item == '':
+        data.remove(item)
+
+data = "+".join(data)
+print(f'k = {k} => {data} = 0')
 
 
-with open('./temp.txt', 'w', encoding="UTF-8") as file:
-    file.write(data)
+with open('./temp.txt', 'w',  encoding="UTF-8") as file:
+    file.write(data + ' = 0')
 
 with open('./temp.txt', 'r', encoding="UTF-8") as file:
     d = file.read()
-print(d)
+#print(d)
