@@ -18,12 +18,13 @@
 # print(round(6.4 - int(6.4),10))
 # print(round(4 - int(4),10))
 # exit()
+LOCAL_ROUND = 6
+
 
 def count_right(f):
     if f:
         s = int(f*10)
-        #print (f's = {s} дробная часть = {round(f*10 - int(f*10),10)}')
-        return s + count_right(round(f*10 - int(f*10), 10))
+        return s + count_right(round(f*10 - int(f*10), LOCAL_ROUND))
     else:
         return 0
 
@@ -36,9 +37,9 @@ def count_left(x):
         return 0
 
 
-#f = 12000.0000000764 # не более 10 знаков после точки
-f = float(input('введите вещественное число\nне более 10 знаков после точки: '))
+f = float(input('введите вещественное число\nне более 6 знаков после точки: '))
 left = int(f)
-right = round(f - left, 10)
-print(f'{f} -> {count_left(left) + count_right(right)}')
+right = round(f - left, LOCAL_ROUND)
 
+
+print(f'{f} -> {count_left(left) + count_right(right)}')
