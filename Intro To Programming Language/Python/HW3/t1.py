@@ -3,8 +3,15 @@
 # *Пример:*
 # - [2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12
 
-from typing import List
+list = [1,5,6,3,7,2,7,9,1,11,1]
+sum_odd =[]
+s = 0
+for i in list:
+    if list.index(i)%2:
+        sum_odd.append(i)
+        s += i
 
-#list(randint(-10, 10) for x in range(2))
-c = list(map for x in range(1,11))
-print(c)
+
+str_sum_odd = [str(i) for i in sum_odd]
+str_sum_odd = " и ".join(str_sum_odd )
+print (f'{list} -> на нечётных позициях элементы {str_sum_odd}, ответ: {s}')    
