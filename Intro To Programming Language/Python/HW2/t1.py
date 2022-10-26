@@ -43,3 +43,4 @@ right = round(f - left, LOCAL_ROUND)
 
 
 print(f'{f} -> {count_left(left) + count_right(right)}')
+t1
