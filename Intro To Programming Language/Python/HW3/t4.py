@@ -4,13 +4,12 @@
 Нельзя использовать готовые функции.
 """
 
-def int_to_binary(i):
+def int_to_binary(b):
     binary_str = ''
-    b=i
-    for j in range(16):
+    while b:
         binary_str = binary_str + str(b%2)
-        b = int(b/2)
+        b = int(b/2)    
     return  binary_str
 
-i  = 2**15 + 2
-print (int_to_binary(i))
+i  = 1024
+print (f'{i} -> {int_to_binary(i)}')
