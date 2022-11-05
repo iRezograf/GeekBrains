@@ -25,7 +25,18 @@ candy = {'0': 'конфет',
          '6': 'конфет',
          '7': 'конфет',
          '8': 'конфет',
-         '9': 'конфет'}
+         '9': 'конфет',
+         '10': 'конфет',
+         '11': 'конфет',
+         '12': 'конфет',
+         '13': 'конфет',
+         '14': 'конфет',
+         '15': 'конфет',
+         '16': 'конфет',
+         '17': 'конфет',
+         '18': 'конфет',
+         '19': 'конфет',
+         }
 
 CANDY_CNT = 51  # по заданию 2021
 MAX_TAKE = 12   # по заданию 28
@@ -34,7 +45,9 @@ me_have = 0
 bot_have = 0
 in_bot = 1
 in_game = 1
-bot_power = {"/000":"тупой", "/333":"не без задатков", "/666":"просто чёрт"}
+bot_power = {"/weak": "тупой",
+             "/middle": "не без задатков", "/diabolo": "просто чёрт"}
+power = '/weak'
 bank = CANDY_CNT
 bot_remarks = []
 #bot_remarks =["привет", "до свидания"]
@@ -42,70 +55,93 @@ bot_remarks = []
 
 wining_str = 'всем спасибо, все свободны'
 
+
+def candys(num):
+    return candy[str(num % 20)]
+
+
 def win(cnt):
     if cnt <= 0:
         return True
 
-def bot_power_choice():
-    for key, val in bot_power.items():
-        print (key, ":", val)
 
-bot_power_choice()
-exit()
+def print_power_choice():
+    for key, val in bot_power.items():
+        print(key, ":", val)
+    return input('ваше действие: ')
+
 
 def my_step():
-    i = int(input('сколько конфет я забираю? :'))
     global me_have, bank, in_bot, in_game
+    print(f'\nНа столе: {str(bank)} {candys(bank)}\n')
+    i = int(input('сколько конфет я забираю? :'))
+    while i > MAX_TAKE or i < 1:
+        i = int(input(f'Напоминаю - диапазон от 1 до {MAX_TAKE}:'))
+
     me_have += i
     bank -= i
     if win(bank):
         print('всем спасибо, все свободны')
-        print(f'{CANDY_CNT} {candy[str(CANDY_CNT%10)]} - мои!')
+        print(f'{CANDY_CNT} {candys(CANDY_CNT)} - мои!')
         in_bot = 1
         in_game = 0
     return in_game
 
-def bot_step():
+
+def bot_step(power):
     global bot_have, bank, in_bot, in_game, bot_remarks
     time.sleep(0.5)
     print('Bot: ' + random.choice(bot_remarks))
+    print(f'\nНа столе: {str(bank)} {candys(bank)}\n')
+    if power == 0:
+        i = random.randint(1, MAX_TAKE)
+    if power == 3:
+        if bank <= MAX_TAKE:
+            i = bank
+        elif bank % (MAX_TAKE + 1) > 1:
+            i = bank % MAX_TAKE - 1
+        elif bank % (MAX_TAKE + 1) == 1:
+            i = 1
+    if power == 6:
+        if bank % (MAX_TAKE + 1) == 0:
+            i = random.randint(1, MAX_TAKE)
+        else:
+            i = bank % (MAX_TAKE + 1)
+    if bank <= MAX_TAKE:
+        i = bank
 
-        
-    i = random.randint(1, MAX_TAKE)
-    print(f'Бот забрал:  {str(i)}  {candy[str(i%10)]}\n')
+    print(f'Решение Бота:  {str(i)}  {candys(i)}\n')
     bot_have += i
     bank -= i
     if win(bank):
         print('Бот: "За AI будущее и все ништяки!"')
-        print(f'{CANDY_CNT} {candy[str(CANDY_CNT%10)]} - мои!')
+        print(f'{CANDY_CNT} {candys(CANDY_CNT)} - мои!')
         in_bot = 1
         in_game = 0
     return in_game
 
-def play_game(who_start):
+
+def play_game(who_start, power):
     global me_have, bot_have, bank, in_bot, in_game
-    while in_game:        
-        print(f'\nНа столе: {str(bank)} {candy[str(bank%10)]}\n')
+    while in_game:
         if who_start == 0:
             if not my_step():
                 break
-            if not bot_step():
-                break   
-        if who_start == 1:     
-            if not bot_step():
-                break   
+            if not bot_step(power):
+                break
+        if who_start == 1:
+            if not bot_step(power):
+                break
             if not my_step():
                 break
-        if who_start == 666:     
-            if not bot_step():
-                break   
-            if not my_step():
-                break
-        print(f'У меня: {me_have} {candy[str(me_have%10)]} У бота: {bot_have} {candy[str(bot_have%10)]}')
+        print(
+            f'У меня: {me_have} {candys(me_have)} У бота: {bot_have} {candys(bot_have)}')
+
 
 def save(save_mode):
     with open('dialog.json', mode=save_mode, encoding='utf-8') as file:
         file.write(json.dumps(bot_remarks, ensure_ascii=False))
+
 
 def load(l_file):
     with open(l_file, mode='r', encoding='utf-8') as file:
@@ -113,25 +149,45 @@ def load(l_file):
     return lst
 
 
-
 #save ('w')
 bot_remarks = load('dialog.json')
 #print (list)
 help = load('help.json')
 
-for item in help:
-    print(item)
 
+who_start = random.randint(0, 1)
+power = 0
 while in_bot:
-    while in_game:
-        command = input('ваше действие: ')
-        if command == '/0':
-            play_game(0)
-        if command == '/1':
-            play_game(1)
-        if command == '/666':
-            play_game(666)
-        else:
-            in_bot = in_game = False
-        print(2021 % 28)
-        s = input("ваше действие: ")
+    for item in help:
+        print(item)
+    command = input('ваше действие: ')
+    """ command = '/start'
+    who_start = 1
+    power = 6 """
+    if command == '/0':
+        who_start = 0
+    if command == '/1':
+        who_start = 1
+    if command == '/6':
+        who_start = 1
+        power = 6
+        #play_game(who_start, power)
+    if command == '/power':
+        print_power_choice()
+        if command == '/weak':
+            power = 0
+        if command == '/middle':
+            power = 3
+        if command == '/diabolo':
+            power = 6
+            who_start = 1
+    if command == '/start':
+        play_game(who_start, power)
+    if command == '/stop':
+        break
+    if command == '/h':
+        for item in help:
+            print(item)
+    else:
+        #in_bot = in_game = False
+        print("")
