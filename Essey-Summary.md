@@ -1,4 +1,4 @@
-# реферат
+git # реферат
 git remote add origin https://github.com/iRezograf/Lesson3.git
 git push --set-upstream origin master
 
