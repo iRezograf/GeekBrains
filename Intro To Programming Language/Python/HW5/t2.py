@@ -74,6 +74,7 @@ def convert_rle_to_txt(rle_file_name, txt_file_name):
     f_txt = open(txt_file_name, 'w')
     d_rle = f_rle.read(BUFF_SIZE)
     #cut_BUFF_SIZE
+    # ошибка на границе буфера
     while d_rle:
         d_txt = RLDe(d_rle)
         for item in d_txt:
