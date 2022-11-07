@@ -12,19 +12,26 @@ def remove_txt(word, txt):
         i += 1
     return result
 
-def search_word(data):
 
+def search_word(data, txt):
+    result = ''
+    i = 0
+    while i < len(data):
+        word = ''
+        if data[i].isalpha():
+            while data[i].isalpha():
+                word += data[i]
+                i += 1
+            result += remove_txt(word, txt)
+            i -= 1
+        else:
+            result += data[i]
+        i += 1
+    return result
 
-
-data = ' абвначал \nлаопдод \tcvcxbb \tадодфабвu ++ абв дла закончилvпдлабв'
+print('\n'*5)
+data = ' абdвначал \nлаопдод\t \ncvcxbb\tадодф,аvбвu абв . дла закончилvпдлабв!'
 txt = 'абв'
-print(data)
-new_data = ""
-for word in data.split():
-    new_word = remove_txt(word, txt)
-    #if new_word:                       # если понадбится удалять лишние пробелы после удаления слов
-    #    new_data += new_word + " "     # если понадбится удалять лишние пробелы после удаления слов
-    new_data += new_word + "+"
-#new_data = new_data.rstrip()           # если понадбится удалять лишние пробелы после удаления слов
-new_data = new_data[:-1] #
-print('"' + new_data + '"')
+print('Было :\n"' + data + '"')
+print('->')
+print('Стало:\n"' + search_word(data, txt) + '"')
