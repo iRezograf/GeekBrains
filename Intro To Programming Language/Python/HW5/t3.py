@@ -17,8 +17,8 @@ def search_word(data, txt):
     result = ''
     i = 0
     while i < len(data):
-        word = ''
         if data[i].isalpha():
+            word = ''
             while data[i].isalpha():
                 word += data[i]
                 i += 1
