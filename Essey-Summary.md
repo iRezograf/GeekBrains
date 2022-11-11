@@ -1,4 +1,4 @@
-# реферат
+git # реферат
 git remote add origin https://github.com/iRezograf/Lesson3.git
 git push --set-upstream origin master
 
@@ -20,45 +20,6 @@ git push --set-upstream origin master
 `$ git <команда> --help`  
 `$ man git-<команда>`  
 ```
-### _Урок 2. Установка и настройка системы контроля версий_
-
-1. проверяем установлен ли гит:  
-`git --version` . 
-git   version 2.32.1 (Apple Git-133)
-1. если нет, то `git init`  
-2. смотрим настройки:  
-`git config -l`  
-2. возможно придется проинициализировать некоторые параметры:
-   ```
-   $ git config --global user.name "Rafael Rezyapov"
-   $ git config --global user.email Rezograf@gmail.com  
-   
-   git config -l  
-   ...  
-   user.email=rezograf@gmail.com  
-   user.name=Rafael Rezyapov  
-   ...
-3. базовый набор сохранения изменений:
-- `git status`  
-- `git diff`
-- `git add Essey-Summary`
-- `git commit -m "comment about commit"`
-- отправить изменения на сервер  
-   `git push`
-- создать новую ветку  
-   `git branch NewBranch`  
-- сделать ее актуальной  
-   `git checkout NewBranch`
-8. коммитим
-   `git commit -m "New branch for new lesson"`  
-8. можно даже переименовать последний коммит  
-   `git commit --amend -m "Новое имя для последнего коммита"`
-8. "вытолкнуть" изменения на GitHub
-   `git push`
-9. можно создать локальный клон  
-`git clone https://github.com/iRezograf/GeekBrains`  
-он создасться в том же каталоге
-
 
 
 1. проверяем установлен ли гит:  
