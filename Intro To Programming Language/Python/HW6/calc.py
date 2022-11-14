@@ -15,11 +15,11 @@ def expression_in_brackets(expression):
 
 
 def calc_in_brackets(full_expression, expression):
-    pattern = re.compile(r"[-|+]*[0-9]+")
+    pattern = re.compile(r"[-|+]*[\.0-9]+")
     m = pattern.findall(expression)
     sum = 0
     for i in m:
-        sum += int(i)
+        sum += float(i)
     # print(sum)
     full_expression = str(full_expression).replace(expression, str(sum))
     return full_expression
@@ -38,7 +38,7 @@ def multiplicate(full_expression):
     # print(full_expression)
     return full_expression
 
-def devide(full_expression):
+def divide(full_expression):
     pattern = re.compile(r"[\.0-9]+\/[\.0-9]+")
     m = pattern.findall(full_expression)
     while m != []:
@@ -62,26 +62,18 @@ def plus_minus(full_expression):
         full_expression = str(sum)
     return full_expression
 
-calc_str = '((1+2)+3)*2*2/(3+9)+(12+13)'
-calc_str = input('введите строку для расчета:')
-calc_str = calc_str.replace(" ", '')
-#print(f'\n\nисходное выражение: {calc_str}')
 
-calc_str = multiplicate(calc_str)
-# print(f'multiplicate: {calc_str}')
-calc_str = devide(calc_str)
-# print(f'devide: {calc_str}')
-calc_str = expression_in_brackets(calc_str)
-# print(f'expression_in_brackets: {calc_str}')
+def calc_expression(expression) -> str:
+    expression = expression.replace(" ", '')
+    expression = expression.replace(",", '.')
+    expression = multiplicate(expression)
+    expression = divide(expression)
+    expression = expression_in_brackets(expression)
+    expression = multiplicate(expression)
+    expression = divide(expression)
+    expression = plus_minus(expression)
+    return expression
 
-calc_str = multiplicate(calc_str)
-# print(f'multiplicate: {calc_str}')
-
-calc_str = devide(calc_str)
-# print(f'devide: {calc_str}')
-
-calc_str = plus_minus(calc_str)
-# print(f'plus_minus: {calc_str}')
-
-print(float(calc_str))
+# demo
+print(calc_expression('((1+2)+3)*2*2/(3+9)+(12.5+13.5)'))
 

@@ -271,11 +271,17 @@ java MainMenu
 ### Регулярные выражения
 
 ##### Половина хлопот при написании регулярного выражения связана с тем, чтобы оно совпадало в нужных местах. Другая половина — с тем, чтобы регулярное выражение не совпадало в ненужных местах. 
-`
-https://docs.microsoft.com/ru-ru/dotnet/api/system.text.regularexpressions.regex?view=net-6.0
-`
 
-### Выбор специализации
+[Регулярки. Microsoft](https://docs.microsoft.com/ru-ru/dotnet/api/system.text.regularexpressions.regex?view=net-6.0)  
+[Регулярки. Habr](https://habr.com/ru/post/349860/#Matchobekty)  
+
+[Оригинальная документация](https://docs.python.org/3/library/re.html)  
+[Очень подробный и обстоятельный материал](https://www.regular-expressions.info/)  
+[Разные сложные трюки и тонкости с примерами](http://www.rexegg.com/)  
+[Он-лайн отладка регулярок](https://regex101.com)  
+[Он-лайн визуализация регулярок](https://www.debuggex.com/)  
+
+### Выбор специализации  
 [Программирование. Дмитрий Криницын рекомендует](./Specialisation/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.%20%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9%20%D0%9A%D1%80%D0%B8%D0%BD%D0%B8%D1%86%D1%8B%D0%BD%20%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D1%83%D0%B5%D1%82.docx)
 
 [Тестирование. Дмитрий Криницын рекомендует](./Specialisation/%D0%A2%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.%20%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9%20%D0%9A%D1%80%D0%B8%D0%BD%D0%B8%D1%86%D1%8B%D0%BD%20%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D1%83%D0%B5%D1%82.docx)
