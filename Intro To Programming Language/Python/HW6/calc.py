@@ -100,6 +100,7 @@ def calc_expression_(expression) -> str:
     expression = plus_minus(expression)
     return expression
 
+
 def prepare_expression(expression):
     full_expression = expression.replace(" ", '')
     full_expression = full_expression.replace(",", '.')
@@ -112,22 +113,27 @@ def prepare_expression(expression):
     return full_expression
 
 
-def calc_expression(full_expression):
+def main_calculation(full_expression):
     pattern = re.compile(r"\([-+ *\/.\d\s]+\)")
     m = pattern.search(full_expression)
     if not m:
-        full_expression = calculate(full_expression)
+        print('not m')
+        full_expression = calculate_mul_div(full_expression)
+        # addition
+        full_expression = calculate_sum_sub(full_expression)
         return full_expression
 
     while m:
-        print(full_expression[m.start():m.end()])
-        value = calculate(full_expression[m.start():m.end()])
-        #if float(value) > 0:
-        full_expression = full_expression[:m.start()] + "+" + value + full_expression[m.end():]
-        #else:
-        #    full_expression = full_expression[:m.start()] + value + full_expression[m.end():]
+        print(f'full_expression[m.start():m.end()]: {full_expression[m.start():m.end()]}')
+        value = calculate_mul_div(full_expression[m.start():m.end()])
+        if float(value) > 0:
+            full_expression = full_expression[:m.start()] + "+" + value + full_expression[m.end():]
+        else:
+            full_expression = full_expression[:m.start()] + value + full_expression[m.end():]
         # cprint(full_expression)
         m = pattern.search(full_expression)
+    # addition
+    full_expression = calculate_sum_sub(full_expression)
     return full_expression
 
 
@@ -140,7 +146,7 @@ def check_val_and_make_exp(full_expression, m, value):
     return full_expression
 
 
-def calculate(full_expression):
+def calculate_mul_div(full_expression):
     full_expression = full_expression.replace(")", '')
     full_expression = full_expression.replace("(", '')
 
@@ -178,6 +184,10 @@ def calculate(full_expression):
                 value = float(d[:mm.start()]) * float(d[mm.end():])
                 full_expression = check_val_and_make_exp(full_expression, m, value)
     # addition
+    full_expression = calculate_sum_sub(full_expression)
+    return full_expression
+
+def calculate_sum_sub(full_expression):
     m = re.findall(r"[-+]?[0-9.]+", full_expression)
     if m:
         s = m.copy()
@@ -189,28 +199,18 @@ def calculate(full_expression):
         value += float(i)
     return str(value)
 
-def summing(full_expression):
-    m = re.findall(r"[-+]?[0-9.]+", full_expression)
-    if m:
-        s = m.copy()
-    else:
-        return full_expression
-    # addition
-    value = 0
-    for i in s:
-        value += float(i)
-    return str(value)
 
-expression = '(49+ (200 *- 25/(5+7)*12))'
-# expression = '(49+ (200 *- 25*4,5/5)'
-expression = '2*(1+4)'
+expression = '(48+ (100 *- 2500,00/(3+7)/-125,0))'
+expression =  '(49+(20*-25*4,0/(-3-7))'
+#expression = '(1+2)*(2+4*2)'
 print(f'expression : {expression}')
 expression = prepare_expression(expression)
-expression = calc_expression(expression)
+expression = main_calculation(expression)
 print(expression)
-#print(brackets(expression))
-expression = summing(expression)
-print(expression)
+# print(brackets(expression))
+
+#expression = calculate_sum_sub(expression)
+#print(expression)
 # brackets(expression)
 exit()
 
