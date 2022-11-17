@@ -74,7 +74,7 @@ def calculate_mul_div(full_expression):
 
     m = re.search(r'[-+ *\/][*\ /]', full_expression)
     if not m:
-        full_expression = summing(full_expression)
+        full_expression = calculate_sum_sub(full_expression)
         return full_expression
 
     if m:
@@ -135,7 +135,8 @@ def main_calculation(full_expression):
         mm = re.search(r'^[-+]?[0-9.]+$', full_expression)
     return full_expression
 
-expression = '40/(2 * (2*10-5) + (10*(6-5)) ))'
+#expression = '40/(2 * (2*10-5) + (10*(6-5)) ))'
+expression = '1+2'
 print(f'expression : {expression}')
 result = main_calculation(expression)
 print(f'result: {result}')
