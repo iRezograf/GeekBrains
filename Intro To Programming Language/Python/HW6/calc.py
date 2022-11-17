@@ -69,6 +69,7 @@ def plus_minus(full_expression):
 
 
 def percentage(full_expression):
+    #[-+]*\s*[0-9]+(?=[-+]+\s*[-+]*\d+\s*%)[-+]+\s*([-+]*\d+\s*%)
     pattern = re.compile(r"[-+]?[\.0-9]+%?")
     m = pattern.findall(full_expression)
     sum = float(0)
@@ -144,7 +145,11 @@ def calculate(full_expression):
     full_expression = full_expression.replace(")", '')
     full_expression = full_expression.replace("(", '')
 
-    m = re.search(r'[-+ *\ /][*\ /]', full_expression)
+    m = re.search(r'[-+ *\/][*\ /]', full_expression)
+    if not m:
+        full_expression = summing(full_expression)
+        return full_expression
+
     if m:
         print('Недопустимая компбинация операций')
         return 'NaN'
